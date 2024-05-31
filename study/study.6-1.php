@@ -21,21 +21,19 @@ class CalcEX extends Calc{
       echo "{$this->num1}×{$this->num2}={$ans}<br>";
    }
    function div(){
+      if($this->num2===0){  
+      echo "{$this->num1}÷{$this->num2}は計算できません<br><br>";
+   } else {
       $ans=$this->num1/$this->num2;
-      echo "{$this->num1}÷{$this->num2}={$ans}<br><br>";
-   }
+echo "{$this->num1}÷{$this->num2}={$ans}<br><br>";
+}
+}
 }
 $calc = new CalcEX();
-$calc->setNumbers(12,3);
+$calc->setNumbers(12,0);
 $calc->add();
 $calc->sub();
 $calc->mul();
 $calc->div();
 
-$calc2 = new CalcEX();
-$calc2->setNumbers(47,3);
-$calc2->add();
-$calc2->sub();
-$calc2->mul();
-$calc2->div();
 ?>
